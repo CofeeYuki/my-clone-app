@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="top-baner">
+        <p>アカウント名表示</p>
+    </div>
+
+    <div class="header-img">
+        <p>ヘッダー画像表示</p>
+    </div>
+
+    <div class="account">
+        <p>アカウントの各種情報表示ボタン</p>
+    </div>
+
+    <div class="tweet">
+        {% for post in posts %}
+            <a href="{% url 'post_detail' pk=post.pk %}">
+                <div class="post">
+                    <p>Xアカウント名X  {{ post.published_date }}</p>
+
+                    <p>{{ post.text|linebreaksbr }}</p>
+                    
+                    <div>
+                        <ul class="res-button">
+                            <li><a href=""><span class="glyphicon glyphicon-map-marker"></span></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-retweet"></span></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+                            <li><a href=""><span class="glyphicon glyphicon-heart"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

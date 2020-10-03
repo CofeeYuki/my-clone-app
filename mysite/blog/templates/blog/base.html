@@ -1,0 +1,29 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Twitter</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <section class="menu">
+                <ul>
+                    <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                    <li><a href=""><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li><a href=""><span class="glyphicon glyphicon-cog"></span></a></li>
+                </ul>
+            </section>
+
+            <section class="main">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

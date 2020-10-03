@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+    <h2>ホーム</h2>
+    <hr>
+
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+
+        {{ form.text|add_class:'post-text-form' }}
+
+        <hr>
+        <button type="submit" class="post-button">ツイートする</button>
+    </form>
+{% endblock %}
